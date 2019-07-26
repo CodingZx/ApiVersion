@@ -9,5 +9,5 @@ public @interface ApiVersion {
     /**
      * 控制版本号
      */
-    String version() default "1.0.0";
+    String version();
 }
