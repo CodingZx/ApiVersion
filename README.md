@@ -3,7 +3,7 @@
 扩展SpringMVC, 基于api版本号自动选择对应接口
 
 
-###使用方式
+### 使用方式
 - 配置基本参数
 > \# 设置请求Header名称 <br>
 >  cicco.api.version.header = api-version                    <br>
@@ -27,4 +27,4 @@
 优先选取小于等于请求Header值中的最大版本接口<br>
 若接口未加ApiVersion注解, 默认为配置项cicco.api.version.defaultVersion的版本<br>
 
-####示例详见[单元测试](https://github.com/CodingZx/apiVersion/tree/master/src/test)
+#### 示例详见[单元测试](https://github.com/CodingZx/apiVersion/tree/master/src/test)
