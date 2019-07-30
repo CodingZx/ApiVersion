@@ -1,6 +1,6 @@
 package lol.cicco.api.version.condition;
 
-import lol.cicco.api.version.annotation.ApiVersion;
+import lol.cicco.api.version.annotation.ApiControl;
 import lol.cicco.api.version.config.ApiVersionProperties;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.mvc.condition.RequestCondition;
@@ -12,8 +12,8 @@ public class ApiVersionCondition implements RequestCondition<ApiVersionCondition
     private final String version;
 
 
-    public ApiVersionCondition(ApiVersion apiVersion, ApiVersionProperties properties) {
-        this(apiVersion == null ? properties.getDefaultVersion() : apiVersion.version(), properties);
+    public ApiVersionCondition(ApiControl apiControl, ApiVersionProperties properties) {
+        this(apiControl == null ? properties.getDefaultVersion() : apiControl.version(), properties);
     }
 
     private ApiVersionCondition(String version, ApiVersionProperties properties) {

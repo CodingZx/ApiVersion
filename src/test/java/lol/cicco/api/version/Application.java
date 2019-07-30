@@ -1,6 +1,6 @@
 package lol.cicco.api.version;
 
-import lol.cicco.api.version.annotation.ApiVersion;
+import lol.cicco.api.version.annotation.ApiControl;
 import lol.cicco.api.version.config.ApiVersionProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,19 +22,19 @@ public class Application {
     }
 
     @GetMapping("/version")
-    @ApiVersion(version = "1.0.1")
+    @ApiControl(version = "1.0.1")
     public String version1() {
         return "version-1.0.1";
     }
 
     @GetMapping("/version")
-    @ApiVersion(version = "2.0.1")
+    @ApiControl(version = "2.0.1")
     public String version2() {
         return "version-2.0.1";
     }
 
     @GetMapping("/version")
-    @ApiVersion(version = "5.0.1.6")
+    @ApiControl(version = "5.0.1.6")
     public String version3() {
         return "version-5.0.1.6";
     }

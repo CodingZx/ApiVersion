@@ -1,6 +1,6 @@
 package lol.cicco.api.version.config;
 
-import lol.cicco.api.version.annotation.ApiVersion;
+import lol.cicco.api.version.annotation.ApiControl;
 import lol.cicco.api.version.condition.ApiVersionCondition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcRegistrations;
@@ -23,15 +23,15 @@ public class WebMvcConfiguration implements WebMvcRegistrations {
 
             @Override
             protected RequestCondition<?> getCustomTypeCondition(Class<?> handlerType) {
-                return createCondition(AnnotationUtils.findAnnotation(handlerType, ApiVersion.class));
+                return createCondition(AnnotationUtils.findAnnotation(handlerType, ApiControl.class));
             }
 
             @Override
             protected RequestCondition<?> getCustomMethodCondition(Method method) {
-                return createCondition(AnnotationUtils.findAnnotation(method, ApiVersion.class));
+                return createCondition(AnnotationUtils.findAnnotation(method, ApiControl.class));
             }
 
-            private RequestCondition<ApiVersionCondition> createCondition(ApiVersion apiVersion) {
+            private RequestCondition<ApiVersionCondition> createCondition(ApiControl apiVersion) {
                 return new ApiVersionCondition(apiVersion, properties);
             }
         };

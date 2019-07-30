@@ -18,7 +18,7 @@
 - 使用ApiVersion注解
 ```java
     @GetMapping("/version")
-    @ApiVersion(version = "1.0.1")
+    @ApiControl(version = "1.0.1")
     public String testController() {
         return "version-1.0.1";
     }    

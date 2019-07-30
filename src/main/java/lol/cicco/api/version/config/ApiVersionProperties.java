@@ -6,7 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class ApiVersionProperties {
     private String header;
     private String separator;
-    private String defaultVersion = "1.0.0";
+    private String defaultVersion = "0.0.1";
 
     public String getHeader() {
         return header;
